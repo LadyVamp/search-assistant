@@ -1,4 +1,4 @@
-# vue-my-cookbook
+# goods-finder
 
 ## Project setup
 ```

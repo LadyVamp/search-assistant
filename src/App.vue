@@ -29,7 +29,7 @@ export default {
         {
           name: "HOME",
           path: "/",
-          icon: "mdi-pot-mix",
+          icon: "mdi-home",
         },
         {
           name: "About",

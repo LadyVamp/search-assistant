@@ -1,11 +1,13 @@
 <template>
-    <div>home</div>
+    <div>
+        <HomePage />
+    </div>
 </template>
 
 <script>
 export default {
     components: {
-        // RecipesList: () => import("@/components/Recipe/RecipesList.vue"),
+        HomePage: () => import('@/components/HomePage.vue'),
     },
 };
 </script>
