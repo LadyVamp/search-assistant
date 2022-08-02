@@ -1,4 +1,4 @@
-# goods-finder
+# search-assistant
 
 ## Project setup
 ```

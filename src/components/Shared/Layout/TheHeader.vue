@@ -53,7 +53,7 @@ export default {
         },
     },
     data: () => ({
-        title: 'Goods finder',
+        title: 'Search assistant',
         subtitle: 'Открывает ссылки за меня',
         isShowDrawer: false,
     }),
