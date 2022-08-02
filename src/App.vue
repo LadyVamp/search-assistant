@@ -20,7 +20,7 @@ export default {
   name: "App",
   components: { TheHeader, TheFooter, TheTabs },
   metaInfo: {
-    title: "Открыватель ссылок",
+    title: "Goods finder",
     // titleTemplate: "%s",
   },
   data() {

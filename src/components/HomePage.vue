@@ -1,5 +1,6 @@
 <template>
     <v-container fluid>
+        <!-- {{ selectedShops }} -->
         <v-row>
             <v-col cols="6">
                 <v-text-field
@@ -43,40 +44,43 @@ export default {
                     label: 'Все инструменты',
                     value: 'vseinstrumenti',
                     link: 'https://www.vseinstrumenti.ru/search_main.php?what=опахало',
-                    checked: true,
                 },
                 {
                     label: 'Леруа',
                     value: 'leroymerlin',
                     link: 'https://leroymerlin.ru/search/?q=опахало',
-                    checked: false,
+                },
+                {
+                    label: '220 вольт',
+                    value: '220-volt',
+                    link: 'https://www.220-volt.ru/?digiSearch=true&term=опахало&params=%7Csort%3DPRICE_ASC',
                 },
                 {
                     label: 'Wildberries',
                     value: 'Wildberries',
                     link: 'https://www.wildberries.ru/catalog/0/search.aspx?sort=popular&search=опахало',
-                    checked: false,
                 },
                 {
                     label: 'Ozon',
                     value: 'Ozon',
                     link: 'https://www.ozon.ru/search/?text=опахало&from_global=true',
-                    checked: false,
                 },
                 {
                     label: 'Сбермаркет',
                     value: 'sbermarket',
                     link: 'https://sbermarket.ru/auchan/search?keywords=опахало&sid=177',
-                    checked: false,
                 },
             ],
         };
     },
     methods: {
         onChange(item) {
-            this.selectedShops.includes(item)
-                ? (this.selectedShops = this.selectedShops.filter((item) => item != item))
-                : this.selectedShops.push(item);
+            if (item.selected) {
+                this.selectedShops.push(item);
+            } else {
+                this.selectedShops.pop(item);
+            }
+            this.selectedShops = [...new Set(this.selectedShops)];
         },
         productSearchLink(item) {
             return item.link.replace('опахало', this.search);
