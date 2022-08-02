@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.4",
     "core-js": "^3.6.5",
+    "detect-incognito": "^1.0.0",
     "eslint-config-prettier": "^8.5.0",
     "moment": "^2.29.1",
     "vue": "^2.6.11",

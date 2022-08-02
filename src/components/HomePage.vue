@@ -29,15 +29,22 @@
                     <a :href="productSearchLink(item)" target="_blank">{{ item.label }} </a>
                 </div>
             </v-col>
+            <v-col v-if="selectedShops.length !== 0" cols="6">
+                <v-alert type="warning"> Включить инкогнито и разрешить всплывающие окна </v-alert>
+                <v-btn :disabled="!isIncognito" @click="openLinks"> Открыть все ссылки </v-btn>
+            </v-col>
         </v-row>
     </v-container>
 </template>
 
 <script>
+import { detectIncognito } from 'detect-incognito';
+
 export default {
     data() {
         return {
             search: '',
+            isIncognito: false,
             selectedShops: [],
             shops: [
                 {
@@ -73,6 +80,12 @@ export default {
             ],
         };
     },
+    mounted() {
+        detectIncognito().then((result) => {
+            console.log(result.browserName, result.isPrivate);
+            this.isIncognito = result.isPrivate;
+        });
+    },
     methods: {
         onChange(item) {
             if (item.selected) {
@@ -84,6 +97,11 @@ export default {
         },
         productSearchLink(item) {
             return item.link.replace('опахало', this.search);
+        },
+        openLinks() {
+            for (let i = 0; i < this.selectedShops.length; i++) {
+                window.open(this.selectedShops[i].link, '_blank');
+            }
         },
     },
 };
