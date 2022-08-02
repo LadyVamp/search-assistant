@@ -99,6 +99,13 @@ export default {
             return item.link.replace('опахало', this.search);
         },
         openLinks() {
+            // TODO: при открытии всех ссылок не заменяет дефолтное значение поискового запроса
+            // console.log(this.selectedShops);
+            // this.selectedShops = this.selectedShops.map(
+            //     (item) => (item.link = item.link.replace('опахало', this.search)),
+            // );
+            // console.log(this.selectedShops);
+
             for (let i = 0; i < this.selectedShops.length; i++) {
                 window.open(this.selectedShops[i].link, '_blank');
             }
