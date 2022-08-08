@@ -30,7 +30,9 @@
                 </div>
             </v-col>
             <v-col v-if="selectedShops.length !== 0" cols="6">
-                <v-alert type="warning"> Включить инкогнито и разрешить всплывающие окна </v-alert>
+                <div class="warning ligthen-2 text-center py-2 mb-2">
+                    <v-icon>mdi-alert</v-icon> Включить инкогнито и разрешить всплывающие окна
+                </div>
                 <v-btn :disabled="!isIncognito" @click="openLinks"> Открыть все ссылки </v-btn>
             </v-col>
         </v-row>
@@ -99,16 +101,10 @@ export default {
             return item.link.replace('опахало', this.search);
         },
         openLinks() {
-            // TODO: при открытии всех ссылок не заменяет дефолтное значение поискового запроса
-            // console.log(this.selectedShops);
-            // this.selectedShops = this.selectedShops.map(
-            //     (item) => (item.link = item.link.replace('опахало', this.search)),
-            // );
-            // console.log(this.selectedShops);
-
-            for (let i = 0; i < this.selectedShops.length; i++) {
-                window.open(this.selectedShops[i].link, '_blank');
-            }
+            const links = this.selectedShops.map((item) => item.link.replace('опахало', this.search));
+            links.forEach((link) => {
+                window.open(link, '_blank');
+            });
         },
     },
 };
