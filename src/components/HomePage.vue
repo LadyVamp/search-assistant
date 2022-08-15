@@ -65,6 +65,21 @@ export default {
                     link: 'https://www.220-volt.ru/?digiSearch=true&term=опахало&params=%7Csort%3DPRICE_ASC',
                 },
                 {
+                    label: 'МВидео',
+                    value: 'mvideo',
+                    link: 'https://www.mvideo.ru/product-list-page?q=опахало',
+                },
+                {
+                    label: 'Эльдорадо',
+                    value: 'eldorado',
+                    link: 'https://www.eldorado.ru/search/catalog.php?q=опахало',
+                },
+                {
+                    label: 'Холодильник',
+                    value: 'holodilnik',
+                    link: 'https://www.holodilnik.ru/search/?search=опахало&sort=hru',
+                },
+                {
                     label: 'Wildberries',
                     value: 'Wildberries',
                     link: 'https://www.wildberries.ru/catalog/0/search.aspx?sort=popular&search=опахало',
