@@ -9,7 +9,7 @@ import VueMeta from 'vue-meta';
 Vue.config.productionTip = false;
 Vue.use(VueMeta);
 Vue.use(VueYandexMetrika, {
-	id: 86162667,
+	id: 89967407,
 	router: router,
 	env: process.env.NODE_ENV,
 	clickmap: true,
