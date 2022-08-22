@@ -75,6 +75,16 @@ export default {
                     link: 'https://www.eldorado.ru/search/catalog.php?q=опахало',
                 },
                 {
+                    label: 'DNS',
+                    value: 'dns',
+                    link: 'https://www.dns-shop.ru/search/?q=опахало',
+                },
+                {
+                    label: 'Плеер',
+                    value: 'pleer',
+                    link: 'https://www.pleer.ru/search_опахало.html',
+                },
+                {
                     label: 'Холодильник',
                     value: 'holodilnik',
                     link: 'https://www.holodilnik.ru/search/?search=опахало&sort=hru',
