@@ -14,18 +14,19 @@
         </v-row>
         <v-row>
             <v-col>
+                <v-switch v-model="isSelectedAll" :disabled="!search" label="Выбрать все" @click="selectAll"></v-switch>
                 <v-checkbox
                     v-for="(item, index) in shops"
                     :key="index"
                     v-model="item.selected"
                     :label="item.label"
-                    :disabled="!search"
+                    :disabled="!search || isSelectedAll"
                     @change="onChange(item)"
                 >
                 </v-checkbox>
             </v-col>
-            <v-col>
-                <div v-for="(item, index) in selectedShops" :key="index">
+            <v-col class="links mt-6">
+                <div v-for="(item, index) in selectedShops" :key="index" class="mb-1">
                     <a :href="productSearchLink(item)" target="_blank">{{ item.label }} </a>
                 </div>
             </v-col>
@@ -47,6 +48,7 @@ export default {
         return {
             search: '',
             isIncognito: false,
+            isSelectedAll: false,
             selectedShops: [],
             shops: [
                 {
@@ -131,8 +133,21 @@ export default {
                 window.open(link, '_blank');
             });
         },
+        selectAll() {
+            this.isSelectedAll ? (this.selectedShops = [...new Set(this.shops)]) : (this.selectedShops = []);
+        },
     },
 };
 </script>
 
-<style></style>
+<style scoped>
+.v-input--selection-controls {
+    margin-top: -16px;
+}
+.bordered {
+    border: 1px solid red;
+}
+.links {
+    margin-top: -12px;
+}
+</style>
