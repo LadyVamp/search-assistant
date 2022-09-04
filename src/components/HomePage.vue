@@ -67,6 +67,11 @@ export default {
                     link: 'https://www.220-volt.ru/?digiSearch=true&term=опахало&params=%7Csort%3DPRICE_ASC',
                 },
                 {
+                    label: 'Восток-сервис',
+                    value: 'vostok',
+                    link: 'https://vostok.ru/search/catalog/?query=опахало',
+                },
+                {
                     label: 'МВидео',
                     value: 'mvideo',
                     link: 'https://www.mvideo.ru/product-list-page?q=опахало',
