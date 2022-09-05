@@ -44,6 +44,7 @@
 import { detectIncognito } from 'detect-incognito';
 
 export default {
+    name: 'SearchAssistant',
     data() {
         return {
             search: '',
@@ -116,7 +117,6 @@ export default {
     },
     mounted() {
         detectIncognito().then((result) => {
-            console.log(result.browserName, result.isPrivate);
             this.isIncognito = result.isPrivate;
         });
     },

@@ -27,9 +27,9 @@ export default {
     return {
       menuItems: [
         {
-          name: "HOME",
+          name: "Search assistant",
           path: "/",
-          icon: "mdi-home",
+          icon: "mdi-link-variant",
         },
         {
           name: "About",

@@ -1,13 +1,13 @@
 <template>
     <div>
-        <HomePage />
+        <SearchAssistant />
     </div>
 </template>
 
 <script>
 export default {
     components: {
-        HomePage: () => import('@/components/HomePage.vue'),
+        SearchAssistant: () => import('@/components/SearchAssistant.vue'),
     },
 };
 </script>
