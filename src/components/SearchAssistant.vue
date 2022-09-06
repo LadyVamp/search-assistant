@@ -1,6 +1,6 @@
 <template>
     <v-container fluid>
-        <!-- {{ selectedShops }} -->
+        <v-btn small @click="search = 'плейсмат'">плейсмат</v-btn>
         <v-row>
             <v-col cols="6">
                 <v-text-field
@@ -27,7 +27,7 @@
                     </v-checkbox>
                 </div>
             </v-col>
-            <v-col class="links mt-6">
+            <v-col v-if="search" class="links mt-6">
                 <div v-for="(item, index) in selectedShops" :key="index" class="mb-1">
                     <a :href="productSearchLink(item)" target="_blank">{{ item.label }} </a>
                 </div>
@@ -125,9 +125,21 @@ export default {
                     category: 'universal',
                 },
                 {
-                    label: 'Сбермаркет',
+                    label: 'СберМегаМаркет',
+                    value: 'sbermegamarket',
+                    link: 'https://sbermegamarket.ru/catalog/?q=опахало',
+                    category: 'universal',
+                },
+                {
+                    label: 'СберМаркет',
                     value: 'sbermarket',
                     link: 'https://sbermarket.ru/auchan/search?keywords=опахало&sid=177',
+                    category: 'universal',
+                },
+                {
+                    label: 'Aliexpress',
+                    value: 'aliexpress',
+                    link: 'https://aliexpress.ru/wholesale?SearchText=опахало&isFreeShip=y&SortType=total_tranpro_desc',
                     category: 'universal',
                 },
             ],
