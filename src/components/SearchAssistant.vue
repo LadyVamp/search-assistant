@@ -83,6 +83,12 @@ export default {
                     category: 'repair',
                 },
                 {
+                    label: 'Сплав',
+                    value: 'splav',
+                    link: 'https://www.splav.ru/search/?q=опахало',
+                    category: 'repair',
+                },
+                {
                     label: 'МВидео',
                     value: 'mvideo',
                     link: 'https://www.mvideo.ru/product-list-page?q=опахало',
