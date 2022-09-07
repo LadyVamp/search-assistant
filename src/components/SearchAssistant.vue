@@ -77,7 +77,7 @@ export default {
                     category: 'repair',
                 },
                 {
-                    label: 'Восток-сервис',
+                    label: 'Восток',
                     value: 'vostok',
                     link: 'https://vostok.ru/search/catalog/?query=опахало',
                     category: 'repair',
