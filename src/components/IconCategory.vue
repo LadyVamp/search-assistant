@@ -30,6 +30,11 @@ export default {
                     icon: 'mdi-hammer-screwdriver',
                 },
                 {
+                    key: 'equipment',
+                    label: 'Снаряжение',
+                    icon: 'mdi-tent',
+                },
+                {
                     key: 'appliances',
                     label: 'Электроника и бытовая техника',
                     icon: 'mdi-kettle',

@@ -32,7 +32,7 @@
                     <a :href="productSearchLink(item)" target="_blank">{{ item.label }} </a>
                 </div>
             </v-col>
-            <v-col v-if="selectedShops.length !== 0" cols="6">
+            <v-col v-if="selectedShops.length !== 0 && !isMobile" cols="6">
                 <div class="warning ligthen-2 text-center py-2 mb-2">
                     <v-icon>mdi-alert</v-icon> Включить инкогнито и разрешить всплывающие окна
                 </div>
@@ -80,13 +80,13 @@ export default {
                     label: 'Восток',
                     value: 'vostok',
                     link: 'https://vostok.ru/search/catalog/?query=опахало',
-                    category: 'repair',
+                    category: 'equipment',
                 },
                 {
                     label: 'Сплав',
                     value: 'splav',
                     link: 'https://www.splav.ru/search/?q=опахало',
-                    category: 'repair',
+                    category: 'equipment',
                 },
                 {
                     label: 'МВидео',
@@ -150,6 +150,11 @@ export default {
                 },
             ],
         };
+    },
+    computed: {
+        isMobile() {
+            return screen.width <= 760 ? true : false;
+        },
     },
     mounted() {
         detectIncognito().then((result) => {
