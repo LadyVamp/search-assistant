@@ -1,10 +1,8 @@
 <template>
     <v-container fluid>
-        <v-btn small @click="search = 'перчатки'">перчатки</v-btn>
-        <v-btn small class="mx-1" @click="search = 'noname'">noname</v-btn>
-        <v-btn small @click="search = 'сито'">сито</v-btn>
+        <v-btn small @click="search = 'плитка'">плитка</v-btn>
         <v-row>
-            <v-col cols="6">
+            <v-col xs="12" md="6">
                 <v-text-field
                     v-model="search"
                     append-icon="mdi-magnify"
@@ -20,9 +18,9 @@
                 <v-switch v-model="isSortByPriceAsc" :disabled="!search" label="Sort by price asc"></v-switch>
                 <div class="d-flex tooltip-rating">
                     <v-switch v-model="isSortByRating" :disabled="!search" label="Sort by rating"></v-switch>
-                    <v-tooltip bottom>
+                    <v-tooltip right>
                         <template v-slot:activator="{ on, attrs }">
-                            <v-icon color="primary" dark v-bind="attrs" v-on="on"> mdi-information-outline </v-icon>
+                            <v-icon color="grey" dark v-bind="attrs" v-on="on"> mdi-information-outline </v-icon>
                         </template>
                         <span>
                             В некоторых магазинах нет сортировки по рейтингу. Замены:
@@ -36,6 +34,10 @@
                         >
                     </v-tooltip>
                 </div>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col>
                 <div v-for="(item, index) in shops" :key="index" class="d-flex">
                     <IconCategory :category="item.category" class="icon-category" />
                     <v-checkbox
@@ -48,7 +50,7 @@
                     </v-checkbox>
                 </div>
             </v-col>
-            <v-col v-if="search" class="links mt-6">
+            <v-col v-if="search" class="links">
                 <div v-for="(item, index) in selectedShops" :key="index" class="mb-1">
                     <a :href="productSearchLink(item)" target="_blank">{{ item.label }} </a>
                 </div>
@@ -253,6 +255,7 @@ export default {
     margin-top: -14px;
 }
 .tooltip-rating i {
-    margin-top: -30px;
+    margin-top: -35px;
+    margin-left: 3px;
 }
 </style>
