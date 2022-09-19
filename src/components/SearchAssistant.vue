@@ -165,7 +165,7 @@ export default {
                     label: 'Ozon',
                     value: 'Ozon',
                     link: 'https://www.ozon.ru/search/?text=opahalo',
-                    link2: 'https://www.ozon.ru/search/?text=noname&sorting=ozon_card_price',
+                    link2: 'https://www.ozon.ru/search/?text=opahalo&sorting=ozon_card_price',
                     link3: 'https://www.ozon.ru/search/?text=opahalo&sorting=rating',
                     category: 'universal',
                 },
