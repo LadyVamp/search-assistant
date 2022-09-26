@@ -2,7 +2,7 @@
     <v-container fluid>
         <v-btn small @click="search = 'плитка'">плитка</v-btn>
         <v-row>
-            <v-col xs="12" md="6">
+            <v-col xs="12" md="6" class="d-flex">
                 <v-text-field
                     v-model="search"
                     append-icon="mdi-magnify"
@@ -10,6 +10,16 @@
                     single-line
                     hide-details
                 ></v-text-field>
+                <v-btn
+                    icon
+                    color="secondary"
+                    class="mt-3 ml-4"
+                    title="Скопировать"
+                    :disabled="!search"
+                    @click="copyToClipBoard(search)"
+                >
+                    <v-icon>mdi-content-copy</v-icon>
+                </v-btn>
             </v-col>
         </v-row>
         <v-row>
@@ -235,6 +245,9 @@ export default {
         },
         selectAll() {
             this.isSelectedAll ? (this.selectedShops = [...new Set(this.shops)]) : (this.selectedShops = []);
+        },
+        copyToClipBoard(textToCopy) {
+            navigator.clipboard.writeText(textToCopy);
         },
     },
 };
