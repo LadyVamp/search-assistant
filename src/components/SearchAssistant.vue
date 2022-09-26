@@ -1,6 +1,7 @@
 <template>
     <v-container fluid>
-        <v-btn small @click="search = 'плитка'">плитка</v-btn>
+        <v-btn small class="mr-2" @click="search = 'плитка'">плитка</v-btn>
+        <v-btn small @click="search = 'плита настольная электрическая 2 конфорки'"> плита... </v-btn>
         <v-row>
             <v-col xs="12" md="6" class="d-flex">
                 <v-text-field
@@ -37,6 +38,7 @@
                             <ul>
                                 <li>Восток - хиты продаж</li>
                                 <li>Сплав - популярности</li>
+                                <li>Спортмастер - нельзя одновременно задать поисковый запрос и сортировку</li>
                                 <li>Плеер - популярные</li>
                                 <li>СберМаркет - выгоднее по весу</li>
                                 <li>Aliexpress - лучший выбор</li>
@@ -44,6 +46,21 @@
                         >
                     </v-tooltip>
                 </div>
+            </v-col>
+        </v-row>
+        <!-- TODO: заменить сортировки switch на select -->
+        <v-row class="mb-4">
+            <v-col xs="4" md="2" class="d-flex">
+                <v-select
+                    v-model="selectedSortDirection"
+                    :items="sortDirections"
+                    menu-props="auto"
+                    label="Сортировка"
+                    hide-details
+                    prepend-icon="mdi-sort"
+                    single-line
+                    @change="onChangeSortDirection"
+                ></v-select>
             </v-col>
         </v-row>
         <v-row>
@@ -91,118 +108,147 @@ export default {
             isSelectedAll: false,
             isSortByPriceAsc: false,
             isSortByRating: false,
+            selectedSortDirection: null,
+            sortDirections: ['price asc', 'rating'],
             selectedShops: [],
             shops: [
                 {
                     label: 'Все инструменты',
                     value: 'vseinstrumenti',
                     link: 'https://www.vseinstrumenti.ru/search_main.php?what=opahalo',
-                    link2: 'https://www.vseinstrumenti.ru/search_main.php?what=opahalo&orderby=price',
-                    link3: 'https://www.vseinstrumenti.ru/search_main.php?what=opahalo&orderby=rating',
+                    linkSortByPriceAsc: 'https://www.vseinstrumenti.ru/search_main.php?what=opahalo&orderby=price',
+                    linkSortByRating: 'https://www.vseinstrumenti.ru/search_main.php?what=opahalo&orderby=rating',
                     category: 'repair',
                 },
                 {
                     label: 'Леруа',
                     value: 'leroymerlin',
                     link: 'https://leroymerlin.ru/search/?q=opahalo',
-                    link2: 'https://leroymerlin.ru/search/?q=opahalo&sortby=1',
-                    link3: 'https://leroymerlin.ru/search/?q=opahalo&sortby=9',
+                    linkSortByPriceAsc: 'https://leroymerlin.ru/search/?q=opahalo&sortby=1',
+                    linkSortByRating: 'https://leroymerlin.ru/search/?q=opahalo&sortby=9',
                     category: 'repair',
                 },
                 {
                     label: 'Восток',
                     value: 'vostok',
                     link: 'https://vostok.ru/search/catalog/?query=opahalo',
-                    link2: 'https://vostok.ru/search/catalog/?query=opahalo&order=price_asc',
-                    link3: 'https://vostok.ru/search/catalog/?query=opahalo&order=hit',
+                    linkSortByPriceAsc: 'https://vostok.ru/search/catalog/?query=opahalo&order=price_asc',
+                    linkSortByRating: 'https://vostok.ru/search/catalog/?query=opahalo&order=hit',
                     category: 'equipment',
                 },
                 {
                     label: 'Сплав',
                     value: 'splav',
                     link: 'https://www.splav.ru/search/?q=opahalo',
-                    link2: 'https://www.splav.ru/search/?q=opahalo&sort=price&order=asc',
-                    link3: 'https://www.splav.ru/search/?sort=show_counter&order=desc&q=opahalo',
+                    linkSortByPriceAsc: 'https://www.splav.ru/search/?q=opahalo&sort=price&order=asc',
+                    linkSortByRating: 'https://www.splav.ru/search/?sort=show_counter&order=desc&q=opahalo',
+                    category: 'equipment',
+                },
+                {
+                    label: 'Спортмастер',
+                    value: 'sportmaster',
+                    link: 'https://www.sportmaster.ru/catalog/product/search.do/?text=opahalo',
                     category: 'equipment',
                 },
                 {
                     label: 'МВидео',
                     value: 'mvideo',
                     link: 'https://www.mvideo.ru/product-list-page?q=opahalo',
-                    link2: 'https://www.mvideo.ru/product-list-page?q=opahalo&sort=price_asc',
-                    link3: 'https://www.mvideo.ru/product-list-page?q=opahalo&sort=rating_desc',
+                    linkSortByPriceAsc: 'https://www.mvideo.ru/product-list-page?q=opahalo&sort=price_asc',
+                    linkSortByRating: 'https://www.mvideo.ru/product-list-page?q=opahalo&sort=rating_desc',
                     category: 'appliances',
                 },
                 {
                     label: 'Эльдорадо',
                     value: 'eldorado',
                     link: 'https://www.eldorado.ru/search/catalog.php?q=opahalo',
-                    link2: 'https://www.eldorado.ru/search/catalog.php?q=opahalo&sort=price&type=ASC',
-                    link3: 'https://www.eldorado.ru/search/catalog.php?q=opahalo&sort=rating',
+                    linkSortByPriceAsc: 'https://www.eldorado.ru/search/catalog.php?q=opahalo&sort=price&type=ASC',
+                    linkSortByRating: 'https://www.eldorado.ru/search/catalog.php?q=opahalo&sort=rating',
                     category: 'appliances',
                 },
                 {
                     label: 'DNS',
                     value: 'dns',
                     link: 'https://www.dns-shop.ru/search/?q=opahalo',
-                    link2: 'https://www.dns-shop.ru/search/?q=opahalo&order=price-asc',
-                    link3: 'https://www.dns-shop.ru/search/?q=opahalo&order=rating',
+                    linkSortByPriceAsc: 'https://www.dns-shop.ru/search/?q=opahalo&order=price-asc',
+                    linkSortByRating: 'https://www.dns-shop.ru/search/?q=opahalo&order=rating',
+                    category: 'appliances',
+                },
+                {
+                    label: 'Технопарк',
+                    value: 'technopark',
+                    link: 'https://www.technopark.ru/search/?q=opahalo&filter_Наличие[0]=в%20наличии',
+                    linkSortByPriceAsc:
+                        'https://www.technopark.ru/search/?q=opahalo&order=price&dir=asc&filter_Наличие[0]=в%20наличии',
+                    linkSortByRating:
+                        'https://www.technopark.ru/search/?q=opahalo&order=rating&dir=desc&filter_Наличие[0]=в%20наличии',
                     category: 'appliances',
                 },
                 {
                     label: 'Плеер',
                     value: 'pleer',
                     link: 'https://www.pleer.ru/search_opahalo.html',
-                    link2: 'https://www.pleer.ru/search_opahalo_1-0,2-0,7-(),3-(),4-(),5-0,8-0,9-0,6-3',
-                    link3: 'https://www.pleer.ru/search_opahalo_1-0,2-0,7-(),3-(),4-(),5-0,8-0,9-0,6-8.html',
+                    linkSortByPriceAsc: 'https://www.pleer.ru/search_opahalo_1-0,2-0,7-(),3-(),4-(),5-0,8-0,9-0,6-3',
+                    linkSortByRating: 'https://www.pleer.ru/search_opahalo_1-0,2-0,7-(),3-(),4-(),5-0,8-0,9-0,6-8.html',
                     category: 'appliances',
                 },
                 {
                     label: 'Холодильник',
                     value: 'holodilnik',
                     link: 'https://www.holodilnik.ru/search/?search=opahalo',
-                    link2: 'https://www.holodilnik.ru/search/?search=opahalo&sort=price',
-                    link3: 'https://www.holodilnik.ru/search/?search=opahalo&page=1&sort=hru',
+                    linkSortByPriceAsc: 'https://www.holodilnik.ru/search/?search=opahalo&sort=price',
+                    linkSortByRating: 'https://www.holodilnik.ru/search/?search=opahalo&page=1&sort=hru',
                     category: 'appliances',
                 },
                 {
                     label: 'Wildberries',
                     value: 'Wildberries',
                     link: 'https://www.wildberries.ru/catalog/0/search.aspx?search=opahalo',
-                    link2: 'https://www.wildberries.ru/catalog/0/search.aspx?search=opahalo&sort=priceup',
-                    link3: 'https://www.wildberries.ru/catalog/0/search.aspx?search=opahalo&sort=rate',
+                    linkSortByPriceAsc: 'https://www.wildberries.ru/catalog/0/search.aspx?search=opahalo&sort=priceup',
+                    linkSortByRating: 'https://www.wildberries.ru/catalog/0/search.aspx?search=opahalo&sort=rate',
                     category: 'universal',
                 },
                 {
                     label: 'Ozon',
                     value: 'Ozon',
                     link: 'https://www.ozon.ru/search/?text=opahalo',
-                    link2: 'https://www.ozon.ru/search/?text=opahalo&sorting=ozon_card_price',
-                    link3: 'https://www.ozon.ru/search/?text=opahalo&sorting=rating',
+                    linkSortByPriceAsc: 'https://www.ozon.ru/search/?text=opahalo&sorting=ozon_card_price',
+                    linkSortByRating: 'https://www.ozon.ru/search/?text=opahalo&sorting=rating',
                     category: 'universal',
                 },
                 {
                     label: 'СберМегаМаркет',
                     value: 'sbermegamarket',
                     link: 'https://sbermegamarket.ru/catalog/?q=opahalo',
-                    link2: 'https://sbermegamarket.ru/catalog/?q=opahalo#?sort=1',
-                    link3: 'https://sbermegamarket.ru/catalog/?q=opahalo#?sort=3',
+                    linkSortByPriceAsc: 'https://sbermegamarket.ru/catalog/?q=opahalo#?sort=1',
+                    linkSortByRating: 'https://sbermegamarket.ru/catalog/?q=opahalo#?sort=3',
                     category: 'universal',
                 },
                 {
                     label: 'СберМаркет',
                     value: 'sbermarket',
                     link: 'https://sbermarket.ru/auchan/search?keywords=opahalo&sid=177',
-                    link2: 'https://sbermarket.ru/auchan/search?keywords=opahalo&sid=177&sort=price_asc',
-                    link3: 'https://sbermarket.ru/auchan/search?keywords=opahalo&sid=177&sort=unit_price_asc',
+                    linkSortByPriceAsc: 'https://sbermarket.ru/auchan/search?keywords=opahalo&sid=177&sort=price_asc',
+                    linkSortByRating:
+                        'https://sbermarket.ru/auchan/search?keywords=opahalo&sid=177&sort=unit_price_asc',
                     category: 'universal',
                 },
                 {
                     label: 'Aliexpress',
                     value: 'aliexpress',
                     link: 'https://aliexpress.ru/wholesale?SearchText=opahalo&isFreeShip=y&SortType=total_tranpro_desc',
-                    link2: 'https://aliexpress.ru/wholesale?SearchText=opahalo&isFreeShip=y&SortType=price_asc',
-                    link3: 'https://aliexpress.ru/wholesale?SearchText=opahalo&isFreeShip=y&SortType=default',
+                    linkSortByPriceAsc:
+                        'https://aliexpress.ru/wholesale?SearchText=opahalo&isFreeShip=y&SortType=price_asc',
+                    linkSortByRating:
+                        'https://aliexpress.ru/wholesale?SearchText=opahalo&isFreeShip=y&SortType=default',
+                    category: 'universal',
+                },
+                {
+                    label: 'Яндекс Маркет',
+                    value: 'market',
+                    link: 'https://market.yandex.ru/search?text=opahalo',
+                    linkSortByPriceAsc: 'https://market.yandex.ru/search?text=opahalo&how=aprice',
+                    linkSortByRating: 'https://market.yandex.ru/search?text=opahalo&how=rorp',
                     category: 'universal',
                 },
             ],
@@ -228,11 +274,12 @@ export default {
             this.selectedShops = [...new Set(this.selectedShops)];
         },
         productSearchLink(item) {
-            if (this.isSortByPriceAsc) {
-                return item.link2.replace('opahalo', this.search);
+            console.log(item);
+            if (this.isSortByPriceAsc && item.linkSortByPriceAsc) {
+                return item.linkSortByPriceAsc.replace('opahalo', this.search);
             }
-            if (this.isSortByRating) {
-                return item.link3.replace('opahalo', this.search);
+            if (this.isSortByRating && item.linkSortByRating) {
+                return item.linkSortByRating.replace('opahalo', this.search);
             } else {
                 return item.link.replace('opahalo', this.search);
             }
@@ -248,6 +295,10 @@ export default {
         },
         copyToClipBoard(textToCopy) {
             navigator.clipboard.writeText(textToCopy);
+        },
+        onChangeSortDirection() {
+            console.log('TODO onChangeSortDirection');
+            console.log(this.selectedSortDirection);
         },
     },
 };
