@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
         <v-btn small class="mr-2" @click="search = 'плитка'">плитка</v-btn>
-        <v-btn small @click="search = 'плита настольная электрическая 2 конфорки'"> плита... </v-btn>
+        <v-btn small @click="search = 'плита настольная индукционная 2 конфорки'"> плита... </v-btn>
         <v-row>
             <v-col xs="12" md="6" class="d-flex">
                 <v-text-field
@@ -42,8 +42,9 @@
                                 <li>Плеер - популярные</li>
                                 <li>СберМаркет - выгоднее по весу</li>
                                 <li>Aliexpress - лучший выбор</li>
-                            </ul></span
-                        >
+                            </ul>
+                        </span>
+                        <span>Онлайн трейд не ищет запрос на кириллице</span>
                     </v-tooltip>
                 </div>
             </v-col>
@@ -241,6 +242,14 @@ export default {
                         'https://aliexpress.ru/wholesale?SearchText=opahalo&isFreeShip=y&SortType=price_asc',
                     linkSortByRating:
                         'https://aliexpress.ru/wholesale?SearchText=opahalo&isFreeShip=y&SortType=default',
+                    category: 'universal',
+                },
+                {
+                    label: 'Онлайн трейд',
+                    value: 'onlinetrade',
+                    link: 'https://www.onlinetrade.ru/sitesearch.html?query=opahalo',
+                    linkSortByPriceAsc: 'https://www.onlinetrade.ru/sitesearch.html?query=+opahalo&sort=price-asc',
+                    linkSortByRating: 'https://www.onlinetrade.ru/sitesearch.html?query=+opahalo&sort=reviews-desc',
                     category: 'universal',
                 },
                 {
