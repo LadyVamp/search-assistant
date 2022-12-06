@@ -25,6 +25,15 @@
         </v-row>
         <v-row>
             <v-col>
+                <span v-for="(item, idx) in categories" :key="idx">
+                    <v-btn :disabled="!search" class="mx-1" @click="filterByCategory(item)">
+                        <IconCategory :category="item" />
+                    </v-btn>
+                </span>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col>
                 <v-switch v-model="isSelectedAll" :disabled="!search" label="Выбрать все" @click="selectAll"></v-switch>
                 <v-switch v-model="isSortByPriceAsc" :disabled="!search" label="Sort by price asc"></v-switch>
                 <div class="d-flex tooltip-rating">
@@ -111,6 +120,7 @@ export default {
             isSortByRating: false,
             selectedSortDirection: null,
             sortDirections: ['price asc', 'rating'],
+            categories: [],
             selectedShops: [],
             shops: [
                 {
@@ -272,6 +282,8 @@ export default {
         detectIncognito().then((result) => {
             this.isIncognito = result.isPrivate;
         });
+        let categories = this.shops.map((item) => item.category);
+        this.categories = [...new Set(categories)];
     },
     methods: {
         onChange(item) {
@@ -283,7 +295,6 @@ export default {
             this.selectedShops = [...new Set(this.selectedShops)];
         },
         productSearchLink(item) {
-            console.log(item);
             if (this.isSortByPriceAsc && item.linkSortByPriceAsc) {
                 return item.linkSortByPriceAsc.replace('opahalo', this.search);
             }
@@ -308,6 +319,10 @@ export default {
         onChangeSortDirection() {
             console.log('TODO onChangeSortDirection');
             console.log(this.selectedSortDirection);
+        },
+        filterByCategory(category) {
+            let filtered = this.shops.filter((item) => item.category === category);
+            this.selectedShops = [...new Set(filtered)];
         },
     },
 };
