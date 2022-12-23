@@ -16,6 +16,22 @@ const shopList = [
         category: 'repair',
     },
     {
+        label: 'Петрович',
+        value: 'petrovich',
+        link: 'https://moscow.petrovich.ru/search/?q=opahalo',
+        linkSortByPriceAsc: 'https://moscow.petrovich.ru/search/?sort=price_asc&q=opahalo',
+        linkSortByRating: 'https://moscow.petrovich.ru/search/?sort=natural_desc&q=opahalo',
+        category: 'repair',
+    },
+    {
+        label: 'Оби',
+        value: 'obi',
+        link: 'https://obi.ru/search?search=opahalo',
+        linkSortByPriceAsc: 'https://obi.ru/search?search=opahalo&sortKey=price&sortDirection=ASC',
+        linkSortByRating: 'https://obi.ru/search?search=opahalo&sortKey=rating&sortDirection=DESC',
+        category: 'repair',
+    },
+    {
         label: 'Восток',
         value: 'vostok',
         link: 'https://vostok.ru/search/catalog/?query=opahalo',

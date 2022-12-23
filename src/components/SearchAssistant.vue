@@ -51,6 +51,7 @@
                                 <li>Плеер - популярные</li>
                                 <li>СберМаркет - выгоднее по весу</li>
                                 <li>Aliexpress - лучший выбор</li>
+                                <li>Петрович - по соответствию</li>
                             </ul>
                         </span>
                         <span>Онлайн трейд не ищет запрос на кириллице</span>
@@ -98,6 +99,14 @@
                     >
                         mdi-biohazard
                     </v-icon>
+                    <v-icon
+                        v-if="worksInIncognito.includes(item.value)"
+                        color="accent"
+                        dark
+                        title="Ссылки открываются только в режиме инкогнито"
+                    >
+                        mdi-incognito
+                    </v-icon>
                 </div>
             </v-col>
             <v-col v-if="selectedShops.length !== 0 && !isMobile" cols="6">
@@ -133,6 +142,7 @@ export default {
             selectedShops: [],
             shops: [],
             addsUtmMarks: ['sportmaster', 'eldorado', 'onlinetrade'],
+            worksInIncognito: ['obi'],
         };
     },
     computed: {
