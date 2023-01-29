@@ -59,21 +59,6 @@
                 </div>
             </v-col>
         </v-row>
-        <!-- TODO: заменить сортировки switch на select -->
-        <v-row class="mb-4">
-            <v-col xs="4" md="2" class="d-flex">
-                <v-select
-                    v-model="selectedSortDirection"
-                    :items="sortDirections"
-                    menu-props="auto"
-                    label="Сортировка"
-                    hide-details
-                    prepend-icon="mdi-sort"
-                    single-line
-                    @change="onChangeSortDirection"
-                ></v-select>
-            </v-col>
-        </v-row>
         <v-row>
             <v-col>
                 <div v-for="(item, index) in shops" :key="index" class="d-flex">
@@ -136,8 +121,6 @@ export default {
             isSelectedAll: false,
             isSortByPriceAsc: false,
             isSortByRating: false,
-            selectedSortDirection: null,
-            sortDirections: ['price asc', 'rating'],
             categories: [],
             selectedShops: [],
             shops: [],
@@ -191,10 +174,6 @@ export default {
         },
         copyToClipBoard(textToCopy) {
             navigator.clipboard.writeText(textToCopy);
-        },
-        onChangeSortDirection() {
-            console.log('TODO onChangeSortDirection');
-            console.log(this.selectedSortDirection);
         },
         filterByCategory(category) {
             let filtered = this.shops.filter((item) => item.category === category);
