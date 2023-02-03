@@ -28,6 +28,7 @@ export default {
                 { text: 'shop', value: 'shop' },
                 { text: 'category', value: 'category' },
                 { text: 'mcc', value: 'mcc' },
+                { text: 'date', value: 'date' },
                 { text: 'description', value: 'description' },
             ],
             items: [],

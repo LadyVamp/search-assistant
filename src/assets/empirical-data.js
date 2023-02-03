@@ -350,5 +350,36 @@ const shopCategories = [
         category: 'Электроника и техника',
         mcc: '5722',
     },
+    {
+        bank: 'Tinkoff',
+        shop: 'Яндекс.Маркет',
+        category: 'Дом и ремонт',
+        mcc: '3990',
+        date: '03.02.2023',
+        description: 'Оплата картой на сайте',
+    },
+    {
+        bank: 'Homecredit',
+        shop: 'Яндекс.Маркет',
+        category: 'Прочее',
+        mcc: '5262',
+        date: '03.02.2023',
+        description: 'Оплата картой на сайте',
+    },
+    {
+        bank: 'Homecredit',
+        shop: 'Яндекс.Маркет',
+        category: 'Прочее',
+        mcc: '5999',
+        date: '03.02.2023',
+        description: 'Оплата картой на пункте выдачи',
+    },
+    {
+        bank: 'Tinkoff',
+        shop: 'Сбермаркет',
+        category: 'Супермаркеты',
+        mcc: '5411',
+        date: '03.02.2023',
+    },
 ];
 export default shopCategories;
