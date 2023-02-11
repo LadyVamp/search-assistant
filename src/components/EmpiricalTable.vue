@@ -1,25 +1,40 @@
 <template>
-    <div>
-        <v-card>
-            <v-card-title>
-                <v-text-field
-                    v-model="search"
-                    append-icon="mdi-magnify"
-                    label="Search"
-                    single-line
-                    hide-details
-                ></v-text-field>
-            </v-card-title>
-            <v-data-table :headers="headers" :items="items" :search="search"></v-data-table>
-        </v-card>
-    </div>
+    <v-card>
+        <v-card-title>
+            <v-row>
+                <v-col cols="3">
+                    <v-text-field
+                        v-model="search"
+                        append-icon="mdi-magnify"
+                        label="Search"
+                        single-line
+                        hide-details
+                    ></v-text-field
+                ></v-col>
+                <v-col cols="3">
+                    <LinkButton
+                        :label="'Найти в mcc-codes'"
+                        :link="mccCodesLink"
+                        :icon="'mdi-book-search-outline'"
+                        :color="'secondary'"
+                        :disabled="!search"
+                    />
+                </v-col>
+            </v-row>
+        </v-card-title>
+        <v-data-table :headers="headers" :items="items" :search="search"></v-data-table>
+    </v-card>
 </template>
 
 <script>
 import shopCategories from '/src/assets/empirical-data.js';
+import LinkButton from '@/components/Shared/Buttons/LinkButton';
 
 export default {
     name: 'EmpiricalTable',
+    components: {
+        LinkButton,
+    },
     data() {
         return {
             search: '',
@@ -33,6 +48,12 @@ export default {
             ],
             items: [],
         };
+    },
+    computed: {
+        mccCodesLink() {
+            let link = 'https://mcc-codes.ru/search/?q=' + this.search;
+            return link;
+        },
     },
     mounted() {
         this.loadItems();

@@ -75,7 +75,7 @@
             </v-col>
             <v-col v-if="search" class="links">
                 <div v-for="(item, index) in selectedShops" :key="index" class="mb-1">
-                    <a :href="productSearchLink(item)" target="_blank">{{ item.label }} </a>
+                    <BaseLink :link="productSearchLink(item)" :label="item.label" />
                     <v-icon
                         v-if="addsUtmMarks.includes(item.value)"
                         color="accent"
@@ -108,11 +108,13 @@
 import shopList from '/src/assets/shops.js';
 import { detectIncognito } from 'detect-incognito';
 import IconCategory from '@/components/IconCategory';
+import BaseLink from '@/components/Shared/BaseLink';
 
 export default {
     name: 'SearchAssistant',
     components: {
         IconCategory,
+        BaseLink,
     },
     data() {
         return {

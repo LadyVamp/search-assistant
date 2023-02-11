@@ -1,6 +1,6 @@
 <template>
     <div class="my-2">
-        <v-btn :href="link" target="_blank" :color="color">
+        <v-btn :href="link" target="_blank" :color="color" :disabled="disabled">
             <v-icon class="pr-1">
                 {{ icon }}
             </v-icon>
@@ -23,11 +23,15 @@ export default {
         // icons https://materialdesignicons.com/
         icon: {
             type: String,
-            default: "mdi-open-in-new",
+            default: 'mdi-open-in-new',
         },
         color: {
             type: String,
-            default: "primary",
+            default: 'primary',
+        },
+        disabled: {
+            type: Boolean,
+            default: false,
         },
     },
 };
