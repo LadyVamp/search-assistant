@@ -54,6 +54,14 @@ const shopList = [
         category: 'equipment',
     },
     {
+        label: 'Кант',
+        value: 'kant',
+        link: 'https://www.kant.ru/search/?q=opahalo',
+        linkSortByPriceAsc: 'https://www.kant.ru/search/?q=opahalo#/filter:sort=price&order=asc&',
+        linkSortByRating: 'https://www.kant.ru/search/?q=opahalo#/filter:sort=rating&order=desc&',
+        category: 'equipment',
+    },
+    {
         label: 'МВидео',
         value: 'mvideo',
         link: 'https://www.mvideo.ru/product-list-page?q=opahalo',
