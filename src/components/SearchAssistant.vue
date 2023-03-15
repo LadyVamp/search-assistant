@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
-        <v-btn small class="mr-2" @click="search = 'плитка'">плитка</v-btn>
-        <v-btn small @click="search = 'плита настольная индукционная 2 конфорки'"> плита... </v-btn>
+        <v-btn small @click="search = 'плитка'">плитка</v-btn>
+        <v-btn small class="mx-2" @click="search = 'плита настольная индукционная 2 конфорки'"> плита... </v-btn>
         <v-row>
             <v-col xs="12" md="6" class="d-flex">
                 <v-text-field
@@ -52,6 +52,9 @@
                                 <li>СберМаркет - выгоднее по весу</li>
                                 <li>Aliexpress - лучший выбор</li>
                                 <li>Петрович - по соответствию</li>
+                                <li>Столички - по размеру скидки</li>
+                                <li>Ригла - по релевантности</li>
+                                <li>Горздрав - по популярности</li>
                             </ul>
                         </span>
                         <span>Онлайн трейд не ищет запрос на кириллице</span>

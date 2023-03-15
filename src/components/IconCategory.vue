@@ -44,6 +44,11 @@ export default {
                     label: 'Универсальный',
                     icon: 'mdi-shape',
                 },
+                {
+                    key: 'pharmacy',
+                    label: 'Аптека',
+                    icon: 'mdi-mortar-pestle-plus',
+                },
             ],
         };
     },

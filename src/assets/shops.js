@@ -167,5 +167,29 @@ const shopList = [
         linkSortByRating: 'https://market.yandex.ru/search?text=opahalo&how=rorp',
         category: 'universal',
     },
+    {
+        label: 'Столички',
+        value: 'stolichki',
+        link: 'https://stolichki.ru/search?name=opahalo',
+        linkSortByPriceAsc: 'https://stolichki.ru/search?name=opahalo&sort=price%3Aasc',
+        linkSortByRating: 'https://stolichki.ru/search?name=opahalo&sort=sale%3Adesc',
+        category: 'pharmacy',
+    },
+    {
+        label: 'Ригла',
+        value: 'rigla',
+        link: 'https://www.rigla.ru/search?q=opahalo',
+        linkSortByPriceAsc: 'https://www.rigla.ru/search?q=opahalo&order=price&dir=ASC',
+        linkSortByRating: 'https://www.rigla.ru/search?q=opahalo&order=relevant&dir=ASC',
+        category: 'pharmacy',
+    },
+    {
+        label: 'Горздрав',
+        value: 'gorzdrav',
+        link: 'https://gorzdrav.org/search/?text=opahalo',
+        linkSortByPriceAsc: 'https://gorzdrav.org/search/?sort=price-asc&q=opahalo%3Apriority-desc#',
+        linkSortByRating: 'https://gorzdrav.org/search/?sort=priority-desc&q=opahalo%3Aprice-asc#',
+        category: 'pharmacy',
+    },
 ];
 export default shopList;
