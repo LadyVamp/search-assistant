@@ -32,6 +32,14 @@ const shopList = [
         category: 'repair',
     },
     {
+        label: 'Кувалда',
+        value: 'kuvalda',
+        link: 'https://www.kuvalda.ru/catalog/search/?keyword=opahalo',
+        linkSortByPriceAsc: 'https://www.kuvalda.ru/catalog/search/?keyword=opahalo',
+        linkSortByRating: 'https://www.kuvalda.ru/catalog/search/?keyword=palisad&sort=popularity',
+        category: 'repair',
+    },
+    {
         label: 'Восток',
         value: 'vostok',
         link: 'https://vostok.ru/search/catalog/?query=opahalo',
