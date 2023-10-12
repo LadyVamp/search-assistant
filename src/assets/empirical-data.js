@@ -439,5 +439,52 @@ const shopCategories = [
         description:
             '1031 руб. 50 бонусов СберСпасибо (4.8%): 5 бонусов - базовые, 45 бонусов - Прайм+ кафе и рестораны',
     },
+    {
+        bank: 'Homecredit',
+        shop: 'SPLAV MAGAZIN',
+        category: 'Одежда и обувь',
+        mcc: '5699',
+        date: '05.09.2023',
+        description: 'tur-eda.ru, Территория странствий, оплата на кассе',
+    },
+    {
+        bank: 'Homecredit',
+        shop: 'Uralairline',
+        category: 'Авиа и ж/д билеты',
+        mcc: '4511',
+        date: '10.09.2023',
+    },
+    {
+        bank: 'Homecredit',
+        shop: 'Spar',
+        category: 'Продукты питания',
+        mcc: '5411',
+        date: '27.09.2023',
+        description: 'Оплата на кассе самообслуживания',
+    },
+    {
+        bank: 'Homecredit',
+        shop: 'Спортмастер',
+        category: 'Спорттовары',
+        mcc: '5655',
+        date: '01.10.2023',
+        description: 'Оплата на кассе Спортмастер ТЦ "Гагаринский"',
+    },
+    {
+        bank: 'Homecredit',
+        shop: 'Госуслуги',
+        category: 'Прочее',
+        mcc: '9311',
+        date: '04.10.2023',
+        description: 'Госпошлина',
+    },
+    {
+        bank: 'Tinkoff',
+        shop: 'Kassir.ru',
+        category: 'Развлечения',
+        mcc: '7972',
+        date: '12.10.2023',
+        description: 'Билет на концерт Lumen в клубе Base за 1980 руб. Кэшбэк 5% (99 руб) по категории "Развлечения"',
+    },
 ];
 export default shopCategories;
