@@ -37,6 +37,11 @@ export default {
                     icon: 'mdi-table',
                 },
                 {
+                    name: 'Links',
+                    path: '/links',
+                    icon: 'mdi-book-information-variant',
+                },
+                {
                     name: 'About',
                     path: '/about',
                     icon: 'mdi-information-outline',

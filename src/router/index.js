@@ -14,6 +14,11 @@ const routes = [
         component: () => import('../views/AboutView.vue'),
     },
     {
+        path: '/links',
+        name: 'Links',
+        component: () => import('../views/LinksView.vue'),
+    },
+    {
         path: '/empirical-table',
         name: 'EmpiricalTable',
         component: () => import('../views/EmpiricalTableView.vue'),
