@@ -42,6 +42,11 @@ export default {
                     icon: 'mdi-book-information-variant',
                 },
                 {
+                    name: 'Password generator',
+                    path: '/password-generator',
+                    icon: 'mdi-dice-multiple-outline',
+                },
+                {
                     name: 'About',
                     path: '/about',
                     icon: 'mdi-information-outline',

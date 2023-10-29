@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <SearchAssistant />
-    </div>
+    <SearchAssistant />
 </template>
 
 <script>

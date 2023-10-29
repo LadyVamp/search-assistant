@@ -19,6 +19,11 @@ const routes = [
         component: () => import('../views/LinksView.vue'),
     },
     {
+        path: '/password-generator',
+        name: 'PasswordGeneratorView',
+        component: () => import('../views/PasswordGeneratorView.vue'),
+    },
+    {
         path: '/empirical-table',
         name: 'EmpiricalTable',
         component: () => import('../views/EmpiricalTableView.vue'),

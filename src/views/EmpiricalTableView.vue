@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <EmpiricalTable />
-    </div>
+    <EmpiricalTable />
 </template>
 
 <script>
