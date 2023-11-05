@@ -60,7 +60,7 @@ export default {
     },
     methods: {
         loadItems() {
-            this.items = shopCategories;
+            this.items = shopCategories.filter((item) => item.shop !== 'Template').reverse();
         },
     },
 };
