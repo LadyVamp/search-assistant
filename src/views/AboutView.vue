@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import LinkButton from '@/components/Shared/Buttons/LinkButton';
+import LinkButton from '@/components/Shared/Buttons/LinkButton.vue';
 
 export default {
     components: {

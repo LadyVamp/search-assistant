@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PasswordGenerator from '@/components/PasswordGenerator';
+import PasswordGenerator from '@/components/PasswordGenerator.vue';
 
 export default {
     components: {

@@ -112,8 +112,8 @@
 <script>
 import shopList from '/src/assets/shops.js';
 import { detectIncognito } from 'detect-incognito';
-import IconCategory from '@/components/IconCategory';
-import BaseLink from '@/components/Shared/BaseLink';
+import IconCategory from '@/components/IconCategory.vue';
+import BaseLink from '@/components/Shared/BaseLink.vue';
 
 export default {
     name: 'SearchAssistant',

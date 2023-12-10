@@ -6,27 +6,27 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: () => import('../views/HomeView.vue'),
+        component: () => import('@/views/HomeView.vue'),
     },
     {
         path: '/about',
         name: 'About',
-        component: () => import('../views/AboutView.vue'),
+        component: () => import('@/views/AboutView.vue'),
     },
     {
         path: '/links',
         name: 'Links',
-        component: () => import('../views/LinksView.vue'),
+        component: () => import('@/views/LinksView.vue'),
     },
     {
         path: '/password-generator',
         name: 'PasswordGeneratorView',
-        component: () => import('../views/PasswordGeneratorView.vue'),
+        component: () => import('@/views/PasswordGeneratorView.vue'),
     },
     {
         path: '/empirical-table',
         name: 'EmpiricalTable',
-        component: () => import('../views/EmpiricalTableView.vue'),
+        component: () => import('@/views/EmpiricalTableView.vue'),
     },
     {
         path: '*',
@@ -35,7 +35,6 @@ const routes = [
 ];
 
 const router = new VueRouter({
-    base: process.env.BASE_URL,
     routes,
 });
 

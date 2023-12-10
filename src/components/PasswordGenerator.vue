@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import BaseButton from '@/components/Shared/Buttons/BaseButton';
+import BaseButton from '@/components/Shared/Buttons/BaseButton.vue';
 
 export default {
     name: 'PasswordGenerator',
