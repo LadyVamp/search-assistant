@@ -30,7 +30,7 @@
                     alt="Logo"
                     class="shrink mr-2"
                     contain
-                    src="/src/assets/logo.png"
+                    :src="logoUrl"
                     transition="scale-transition"
                     width="40"
                     title="На главную"
@@ -52,10 +52,13 @@ export default {
             required: true,
         },
     },
-    data: () => ({
-        title: 'Search assistant',
-        subtitle: 'Открывает ссылки за меня',
-        isShowDrawer: false,
-    }),
+    data() {
+        return {
+            title: 'Search assistant',
+            subtitle: 'Автоматизация поиска товаров в магазинах + таблица MCC-кодов',
+            isShowDrawer: false,
+            logoUrl: new URL('@/assets/logo.png', import.meta.url).href,
+        };
+    },
 };
 </script>
