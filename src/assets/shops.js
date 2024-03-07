@@ -199,5 +199,21 @@ const shopList = [
         linkSortByRating: 'https://gorzdrav.org/search/?sort=priority-desc&q=opahalo%3Aprice-asc#',
         category: 'pharmacy',
     },
+    {
+        label: 'Eapteka',
+        value: 'eapteka',
+        link: 'https://www.eapteka.ru/search/?q=opahalo',
+        linkSortByPriceAsc: 'https://www.eapteka.ru/search/?sort=price&order=asc&q=opahalo',
+        linkSortByRating: 'https://www.eapteka.ru/search/?q=opahalo',
+        category: 'pharmacy',
+    },
+    {
+        label: 'Планета здоровья',
+        value: 'planetazdorovo',
+        link: 'https://planetazdorovo.ru/search/?q=opahalo',
+        linkSortByPriceAsc: 'https://planetazdorovo.ru/search/?sort=price&q=opahalo',
+        linkSortByRating: 'https://planetazdorovo.ru/search/?sort=score&q=opahalo',
+        category: 'pharmacy',
+    },
 ];
 export default shopList;
