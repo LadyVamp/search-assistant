@@ -707,6 +707,14 @@ const shopCategories = [
             'Заказ на perekrestok.ru. Кэшбэк Тинькофф 10% "За заказы продуктов и других товаров на perekrestok.ru и в приложении Перекресток с доставкой за 60 минут". Доставка не экспресс, а на следующий день. Кэшбэк 10% начислили. Ограничений по сумме заказа и количеству заказов в месяц нет.',
     },
     {
+        bank: 'Sber',
+        shop: 'Askona',
+        category: 'Товары для дома',
+        mcc: '5712',
+        date: '12.05.24',
+        description: '',
+    },
+    {
         bank: 'Alfa | Tinkoff | Homebank | Sber',
         shop: 'Template',
         category: '',
