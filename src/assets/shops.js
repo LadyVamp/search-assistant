@@ -177,6 +177,16 @@ const shopList = [
         category: 'universal',
     },
     {
+        label: 'Детский мир',
+        value: 'detmir',
+        link: 'https://www.detmir.ru/search/results/?qt=opahalo&searchType=auto&searchMode=common',
+        linkSortByPriceAsc:
+            'https://www.detmir.ru/search/results/?qt=opahalo&searchType=common&searchMode=common&order=price-asc',
+        linkSortByRating:
+            'https://www.detmir.ru/search/results/?qt=opahalo&searchType=common&searchMode=common&order=rating-desc',
+        category: 'universal',
+    },
+    {
         label: 'Столички',
         value: 'stolichki',
         link: 'https://stolichki.ru/search?name=opahalo',
@@ -214,6 +224,14 @@ const shopList = [
         link: 'https://planetazdorovo.ru/search/?q=opahalo',
         linkSortByPriceAsc: 'https://planetazdorovo.ru/search/?sort=price&q=opahalo',
         linkSortByRating: 'https://planetazdorovo.ru/search/?sort=score&q=opahalo',
+        category: 'pharmacy',
+    },
+    {
+        label: 'Асна',
+        value: 'asna',
+        link: 'https://www.asna.ru/search/?query=opahalo',
+        linkSortByPriceAsc: 'https://www.asna.ru/search/?query=opahalo&sort=price',
+        linkSortByRating: 'https://www.asna.ru/search/?query=opahalo',
         category: 'pharmacy',
     },
 ];
