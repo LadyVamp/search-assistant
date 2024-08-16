@@ -164,16 +164,16 @@ export default {
         },
         productSearchLink(item) {
             if (this.isSortByPriceAsc && item.linkSortByPriceAsc) {
-                return item.linkSortByPriceAsc.replace('opahalo', this.search);
+                return item.linkSortByPriceAsc.replace('test', this.search);
             }
             if (this.isSortByRating && item.linkSortByRating) {
-                return item.linkSortByRating.replace('opahalo', this.search);
+                return item.linkSortByRating.replace('test', this.search);
             } else {
-                return item.link.replace('opahalo', this.search);
+                return item.link.replace('test', this.search);
             }
         },
         openLinks() {
-            const links = this.selectedShops.map((item) => item.link.replace('opahalo', this.search));
+            const links = this.selectedShops.map((item) => item.link.replace('test', this.search));
             links.forEach((link) => {
                 window.open(link, '_blank');
             });
