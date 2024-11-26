@@ -211,6 +211,14 @@ const shopList = [
         category: 'pharmacy',
     },
     {
+        label: 'Apteka.ru',
+        value: 'apteka.ru',
+        link: 'https://apteka.ru/search/?q=test',
+        linkSortByPriceAsc: 'https://apteka.ru/search/?q=test&sort=byprice',
+        linkSortByRating: 'https://apteka.ru/search/?q=test',
+        category: 'pharmacy',
+    },
+    {
         label: 'Ригла',
         value: 'rigla',
         link: 'https://www.rigla.ru/search?q=test',
