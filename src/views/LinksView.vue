@@ -26,18 +26,6 @@
             />
         </article>
         <article>
-            <h3>Хоум</h3>
-            <a href="https://polza.home.bank/Content/docs/Polza_for_debit_v_48.0_10092023.pdf" target="_blank"
-                >не начислит кэшбэк</a
-            >
-            <p>
-                операции с МСС-кодами: 4812, 4813, 4814, 4816, 4821, 4829, 4900, 5960, 5968, 6010, 6011, 6012, 6050,
-                6051, 6211, 6300, 6399, 6529, 6530, 6531, 6532, 6533, 6534, 6536, 6537, 6538, 6540, 7299, 7311, 7372,
-                7399, 7995, 8641, 8999, 9222, 9311, 9399, 9754
-            </p>
-            <LinkButton :label="'Польза'" :link="'https://mcc-codes.ru/card/home-credit-polza'" :color="'#e2383f'" />
-        </article>
-        <article>
             <h3>Т-банк</h3>
             <a
                 href="https://www.tinkoff.ru/bank/help/debit-cards/tinkoff-black/earn-with-card/cashback-intro/#q7"
@@ -97,8 +85,8 @@
             <a
                 href="https://cdn1.ozone.ru/s3/ob-landing/static/docs/ecom/products/rules/2024.08.19%20-%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%BB%D0%BE%D1%8F%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D0%BE%20Ozon%20%D0%9A%D0%B0%D1%80%D1%82%D0%B5.pdf"
                 target="_blank"
-                >не начислит кэшбэк стр. 11</a
-            >
+                >не начислит кэшбэк стр. 11
+            </a>
             <p>
                 операции с МСС-кодами: 0763, 1799, 2791, 2842, 3069, 3816, 3828, 3830 - 3831, 4119, 4214 - 4215, 4225,
                 4784, 4812 - 4816, 4821, 4829, 4899 - 4900, 5044, 5051, 5169, 5199, 5271, 5416 - 5417, 5933, 5935, 5962,
@@ -111,6 +99,25 @@
                 :label="'Список категорий и MCC кодов стр. 7'"
                 :link="'https://cdn1.ozone.ru/s3/ob-landing/static/docs/ecom/products/rules/2024.08.19%20-%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%BB%D0%BE%D1%8F%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D0%BE%20Ozon%20%D0%9A%D0%B0%D1%80%D1%82%D0%B5.pdf'"
                 :color="'#005bff'"
+            />
+        </article>
+        <article>
+            <h3>BTБ</h3>
+            <a
+                href="https://www.vtb.ru/media-files/vtb.ru/sitepages/personal/karty/programma-loyalnosti/pravila_programmy_loyalnosti_multibonus_redakciya_deystvuet_s_01.01.2025.pdf"
+                target="_blank"
+                >не начислит кэшбэк стр. 11
+            </a>
+            <p>
+                операции с МСС-кодами: 6538, 6050, 6051, 6010, 6011, 6012, 7995, 6211, 6532, 6536, 6537, 6540, 9311,
+                4900, 9211, 9222, 6529, 4812, 4813, 4814, 4816, 4829, 6531, 6533, 6534, 8398, 4215, 5933, 6530, 7299,
+                7311, 7372, 7399, 8999, 9399, 9754, 7802, 7276, 9390, 9223, 9402, 4815, 4899, 5046, 5047, 5085, 5960,
+                7389, 7801, 7800, 9406, 8641, 8651, 8661, 6535
+            </p>
+            <LinkButton
+                :label="'Список категорий и MCC кодов стр. 22'"
+                :link="'https://www.vtb.ru/media-files/vtb.ru/sitepages/personal/karty/programma-loyalnosti/pravila_programmy_loyalnosti_multibonus_redakciya_deystvuet_s_01.01.2025.pdf'"
+                :color="'#3261ec'"
             />
         </article>
     </section>
