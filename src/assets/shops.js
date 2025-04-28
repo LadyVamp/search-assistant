@@ -250,5 +250,13 @@ const shopList = [
         linkSortByRating: 'https://www.eapteka.ru/search/?q=test',
         category: 'pharmacy',
     },
+    {
+        label: 'Живика',
+        value: 'zhivika',
+        link: 'https://msk.zhivika.ru/search/resultPage?searchString=test',
+        linkSortByPriceAsc: 'https://msk.zhivika.ru/search/resultPage?searchString=test',
+        linkSortByRating: 'https://msk.zhivika.ru/search/resultPage?searchString=test',
+        category: 'pharmacy',
+    },
 ];
 export default shopList;
