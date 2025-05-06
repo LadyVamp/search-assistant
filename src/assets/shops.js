@@ -187,6 +187,14 @@ const shopList = [
         category: 'universal',
     },
     {
+        label: 'Золотое яблоко',
+        value: 'goldapple',
+        link: 'https://goldapple.ru/catalogsearch/result?q=test',
+        linkSortByPriceAsc: 'https://goldapple.ru/catalogsearch/result?q=test&sort=priceAsc',
+        linkSortByRating: 'https://goldapple.ru/catalogsearch/result?q=test&sort=byRating',
+        category: 'universal',
+    },
+    {
         label: 'Планета здоровья',
         value: 'planetazdorovo',
         link: 'https://planetazdorovo.ru/search/?q=test',
