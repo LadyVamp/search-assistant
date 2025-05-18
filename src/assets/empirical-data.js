@@ -959,6 +959,22 @@ const shopCategories = [
         description: '',
     },
     {
+        bank: 'T-bank',
+        shop: 'Яндекс Лавка',
+        category: 'Супермаркеты',
+        mcc: '3990',
+        date: '13.05.25',
+        description: '',
+    },
+    {
+        bank: 'Vtb',
+        shop: 'Яндекс Лавка',
+        category: 'Супермаркеты',
+        mcc: '3990',
+        date: '18.05.25',
+        description: '',
+    },
+    {
         bank: 'Alfa | T-bank | Sber | Mkb | Ozon | Vtb',
         shop: 'Template',
         category: '',
