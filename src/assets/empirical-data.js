@@ -1055,6 +1055,14 @@ const shopCategories = [
         description: 'Онлайн-заказ на печать фото на kopirka.ru',
     },
     {
+        bank: 'Sber',
+        shop: 'Детская парикмахерская "Крутышка"',
+        category: 'Салоны красоты',
+        mcc: '7230',
+        date: '10.09.25',
+        description: '',
+    },
+    {
         bank: 'Alfa | T-bank | Sber | Mkb | Ozon | Vtb',
         shop: 'Template',
         category: '',
