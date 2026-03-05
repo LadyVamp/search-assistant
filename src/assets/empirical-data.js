@@ -1063,6 +1063,22 @@ const shopCategories = [
         description: '',
     },
     {
+        bank: 'Ozon',
+        shop: 'Service Center Respect',
+        category: 'Дом и ремонт',
+        mcc: '7379',
+        date: '05.03.26',
+        description: '',
+    },
+    {
+        bank: 'T-bank',
+        shop: 'Складчики',
+        category: 'Цифровые товары',
+        mcc: '5816',
+        date: '05.03.26',
+        description: '',
+    },
+    {
         bank: 'Alfa | T-bank | Sber | Mkb | Ozon | Vtb',
         shop: 'Template',
         category: '',
