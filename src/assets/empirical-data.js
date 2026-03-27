@@ -1079,6 +1079,14 @@ const shopCategories = [
         description: '',
     },
     {
+        bank: 'T-bank',
+        shop: 'Золотое яблоко goldapple',
+        category: 'Красота',
+        mcc: '5311',
+        date: '27.03.26',
+        description: 'Шоппинг в Городе кб 10%',
+    },
+    {
         bank: 'Alfa | T-bank | Sber | Mkb | Ozon | Vtb',
         shop: 'Template',
         category: '',
