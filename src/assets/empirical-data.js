@@ -1087,6 +1087,14 @@ const shopCategories = [
         description: 'Шоппинг в Городе кб 10%',
     },
     {
+        bank: 'T-bank',
+        shop: 'Госуслуги',
+        category: 'Госуслуги',
+        mcc: '9390',
+        date: '07.09.26',
+        description: 'Оплата детского сада',
+    },
+    {
         bank: 'Alfa | T-bank | Sber | Mkb | Ozon | Vtb',
         shop: 'Template',
         category: '',
