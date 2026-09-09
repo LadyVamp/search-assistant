@@ -1095,6 +1095,14 @@ const shopCategories = [
         description: 'Оплата детского сада',
     },
     {
+        bank: 'T-bank',
+        shop: 'Альфа Страхование',
+        category: 'Финансы',
+        mcc: '6300',
+        date: '09.09.26',
+        description: 'Счет АльфаСтрахование',
+    },
+    {
         bank: 'Alfa | T-bank | Sber | Mkb | Ozon | Vtb',
         shop: 'Template',
         category: '',
