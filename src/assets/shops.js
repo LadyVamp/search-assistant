@@ -266,5 +266,13 @@ const shopList = [
         linkSortByRating: 'https://msk.zhivika.ru/search/resultPage?searchString=test',
         category: 'pharmacy',
     },
+    {
+        label: 'Магнит Аптека',
+        value: 'magnit',
+        link: 'https://apteka.magnit.ru/search?q=test',
+        linkSortByPriceAsc: 'https://apteka.magnit.ru/search?q=test&sort=asc_price',
+        linkSortByRating: 'https://apteka.magnit.ru/search?q=test&sort=desc_popularity',
+        category: 'pharmacy',
+    },
 ];
 export default shopList;
