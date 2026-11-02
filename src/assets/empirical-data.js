@@ -1103,6 +1103,14 @@ const shopCategories = [
         description: 'Счет АльфаСтрахование',
     },
     {
+        bank: 'Mkb',
+        shop: 'Личный кабинет налогоплательщика',
+        category: 'Прочее',
+        mcc: '9390',
+        date: '02.11.26',
+        description: 'Налоги',
+    },
+    {
         bank: 'Alfa | T-bank | Sber | Mkb | Ozon | Vtb',
         shop: 'Template',
         category: '',
