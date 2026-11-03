@@ -1111,6 +1111,14 @@ const shopCategories = [
         description: 'Налоги',
     },
     {
+        bank: 'T-bank',
+        shop: 'Ингосстрах',
+        category: 'Финансы',
+        mcc: '6300',
+        date: '03.11.26',
+        description: 'ОСАГО',
+    },
+    {
         bank: 'Alfa | T-bank | Sber | Mkb | Ozon | Vtb',
         shop: 'Template',
         category: '',
